@@ -1,6 +1,13 @@
 <script setup lang="ts">
+import { getTrendingMovies } from '~/services/movies'
+
 const colorMode = useColorMode()
 const counter = ref(0)
+
+onMounted(async () => {
+  const res = await getTrendingMovies()
+  console.log(res, 'get trending movies')
+})
 </script>
 
 <template>

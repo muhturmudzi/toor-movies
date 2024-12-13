@@ -21,5 +21,11 @@ export default defineNuxtConfig({
      * @default "./components/ui"
      */
     componentDir: './components/ui'
-  }
+  },
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.API_BASE || 'http://localhost:3000',
+      accessToken: process.env.ACCESS_TOKEN
+    }
+  },
 })
