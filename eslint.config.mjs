@@ -37,7 +37,7 @@ export default withNuxt([
       'no-trailing-spaces': ['error', { skipBlankLines: false }],
       'no-irregular-whitespace': 'error',
       'no-multiple-empty-lines': 'error',
-      camelcase: 'error',
+      // camelcase: 'error',
       'vue/require-default-prop': 'off',
       'vue/no-multiple-template-root': 'off',
       '@typescript-eslint/no-explicit-any': 'off'
