@@ -39,6 +39,7 @@ export default withNuxt([
       'no-multiple-empty-lines': 'error',
       camelcase: 'error',
       'vue/require-default-prop': 'off',
+      'vue/no-multiple-template-root': 'off',
     },
     ignores: [
       // Files or directories to ignore
