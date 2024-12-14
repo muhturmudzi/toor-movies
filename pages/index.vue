@@ -23,7 +23,7 @@ const counter = ref(0)
 //   }
 // }
 
-const { data: trend, refresh } = await useAsyncData(
+const { data: trendMovie, refresh } = await useAsyncData(
   'trending-movies',
   () =>  getTrendingMovies()
 )
@@ -34,9 +34,10 @@ const { data: trend, refresh } = await useAsyncData(
 </script>
 
 <template>
-  <p class="mt-10">home</p>
-  <!-- <pre>{{ trending }}</pre>
-  <pre>{{ trend }}</pre> -->
+  <MovieCarousel :data="trendMovie?.results" />
+
+  <pre>{{ trendMovie?.results[0] }}</pre>
+
   <div>
     <Button
       @click="counter++"
@@ -75,14 +76,14 @@ const { data: trend, refresh } = await useAsyncData(
       Refresh
     </Button>
 
-    <div>
+    <!-- <div>
       <p
-        v-for="item in trend?.results"
+        v-for="item in trendMovie?.results"
         :key="item.title"
         class="mb-2"
       >
         {{ item.title }}
       </p>
-    </div>
+    </div> -->
   </div>
 </template>

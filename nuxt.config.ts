@@ -33,7 +33,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_API_BASE || 'http://localhost:3000',
-      accessToken: process.env.NUXT_ACCESS_TOKEN
+      accessToken: process.env.NUXT_ACCESS_TOKEN,
+      imgUrl: process.env.NUXT_IMG_URL,
     }
   },
 })

@@ -10,7 +10,7 @@
         alt="moovietime"
       >
 
-      <InputSearchMovie />
+      <InputSearch />
 
       <ul class="hidden md:flex items-center space-x-6 lg:space-x-10 uppercase text-sm font-semibold">
         <li class="flex space-x-2">
