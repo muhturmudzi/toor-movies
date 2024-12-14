@@ -2,9 +2,10 @@
 import { getGenreMovies } from '~/services/genre'
 const genreStore = useGenreMovieStore()
 
-await useAsyncData('genres', () => getGenreMovies().then((data) => {
-  genreStore.genres = data.genres
-}))
+const { data: genreMovie } = await useAsyncData('genres', async () => getGenreMovies())
+if (genreMovie.value) {
+  genreStore.genres = genreMovie.value.genres
+}
 </script>
 
 <template>
@@ -33,7 +34,7 @@ await useAsyncData('genres', () => getGenreMovies().then((data) => {
               <li
                 v-for="(item, index) in genreStore.genres"
                 :key="`genre-${index}-${item.name}`"
-                class="py-1 px-2 hover:bg-red-600 rounded-sm cursor-pointer"
+                class="py-1 px-2 hover:bg-destructive rounded-sm cursor-pointer"
               >
                 {{ item.name }}
               </li>

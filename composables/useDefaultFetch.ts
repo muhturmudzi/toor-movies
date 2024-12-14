@@ -49,9 +49,7 @@ const useDefaultFetch = async <T>(url: string, opts: IOptionsFetch): Promise<T> 
     headers: {
       ...opts.headers
     },
-    onRequest({ request, options }) {
-      console.log(request, 'request global')
-
+    onRequest({ options }) {
       const headers = new Headers(options.headers)
       if (config.public.accessToken) {
         headers.set('Authorization', `Bearer ${config.public.accessToken}`)
@@ -59,12 +57,12 @@ const useDefaultFetch = async <T>(url: string, opts: IOptionsFetch): Promise<T> 
       options.headers = headers
     },
     onResponse({ response }) {
-      console.log(response, 'response global')
+      // console.log(response, 'response global')
 
       return response._data
     },
     async onResponseError({ response }) {
-      console.log(response, 'error global')
+      // console.log(response, 'error global')
 
       throw response._data.error as IErrorResponse
     }
