@@ -18,6 +18,7 @@ export interface CarouselProps {
 }
 
 export interface CarouselEmits {
+  // eslint-disable-next-line no-unused-vars
   (e: 'init-api', payload: UnwrapRefCarouselApi): void
 }
 
