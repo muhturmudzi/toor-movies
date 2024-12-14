@@ -34,7 +34,7 @@ const { data: trend, refresh } = await useAsyncData(
 </script>
 
 <template>
-  <p>home</p>
+  <p class="mt-10">home</p>
   <!-- <pre>{{ trending }}</pre>
   <pre>{{ trend }}</pre> -->
   <div>

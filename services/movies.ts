@@ -16,7 +16,7 @@ export interface IMovie {
   vote_count: number
 }
 
-export const getTrendingMovies = async (query: any = {}): Promise<IGeneralResponse<IMovie[]>> => {
+export const getTrendingMovies = async (query?: any): Promise<IGeneralResponse<IMovie[]>> => {
   try {
     const res: IGeneralResponse<IMovie[]> = await useGetFetch('/3/trending/movie/day', {
       query: query
