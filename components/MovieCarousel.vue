@@ -12,6 +12,7 @@ interface IProps {
 
 defineProps<IProps>()
 const { public: { imgUrl } } = useRuntimeConfig()
+const { getGenreNameById } = useGenreMovieStore()
 
 const emblaMainApi = ref<CarouselApi>()
 const emblaThumbnailApi = ref<CarouselApi>()
@@ -40,7 +41,7 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
 </script>
 
 <template>
-  <section class="relative py-24 overflow-hidden">
+  <section class="relative pt-32 pb-20 overflow-hidden">
     <Carousel
       :plugins="[Autoplay({
         delay: 3000,
@@ -63,7 +64,7 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
               loading="lazy"
             />
             <div class="flex items-center w-full">
-              <div class="bg-black p-5 w-full">
+              <div class="bg-black text-white p-5 w-full">
                 <div class="flex items-center space-x-2">
                   <img
                     src="/assets/images/icon/star.svg"
@@ -79,7 +80,7 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
                 <div class="flex items-center space-x-2 mt-2">
                   <p>{{ getYear(item.release_date) }}</p>
                   <div class="bg-white/50 w-2 h-2 rounded-full" />
-                  <p>Genre</p>
+                  <p>{{ getGenreNameById(item.genre_ids[0]) }}</p>
                 </div>
 
                 <p class="text-xs leading-5 mt-2">
@@ -104,7 +105,7 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
           @click="onThumbClick(index)"
         >
           <button
-            :class="`h-3 rounded-full transition-all ${index === selectedIndex ? 'w-16 bg-[#E74C3C]' : 'w-3 bg-white/50'}`"
+            :class="`h-3 rounded-full transition-all ${index === selectedIndex ? 'w-16 bg-destructive' : 'w-3 bg-white/50'}`"
           />
         </CarouselItem>
       </CarouselContent>

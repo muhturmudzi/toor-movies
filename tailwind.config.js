@@ -83,6 +83,9 @@ module.exports = {
         'collapsible-down': 'collapsible-down 0.2s ease-in-out',
         'collapsible-up': 'collapsible-up 0.2s ease-in-out',
       },
+      backgroundImage: {
+        'gradient-1': 'linear-gradient(180deg, #0E1723 0%, rgba(30, 35, 42, 0) 100%)',
+      }
     },
   },
   plugins: [animate],

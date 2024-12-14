@@ -11,7 +11,7 @@ useSeoMeta({
 <template>
   <LayoutsTopbar />
 
-  <main>
+  <main class="relative">
     <slot />
   </main>
 </template>

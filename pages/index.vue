@@ -4,6 +4,8 @@ import {
   // type IMovie
 } from '~/services/movies'
 
+const genreStore = useGenreMovieStore()
+
 const colorMode = useColorMode()
 const counter = ref(0)
 
@@ -23,7 +25,7 @@ const counter = ref(0)
 //   }
 // }
 
-const { data: trendMovie, refresh } = await useAsyncData(
+const { data: trendMovie } = await useAsyncData(
   'trending-movies',
   () =>  getTrendingMovies()
 )
@@ -31,12 +33,19 @@ const { data: trendMovie, refresh } = await useAsyncData(
 // onMounted(() => {
 //   fetchTrending()
 // })
+
+
 </script>
 
 <template>
   <MovieCarousel :data="trendMovie?.results" />
+  <div class="absolute top-[600px] left-4 w-full h-72 bg-white/5 z-[-1]" />
+  <DiscoverMovie />
 
-  <pre>{{ trendMovie?.results[0] }}</pre>
+  <!-- <pre>{{ genreMovie?.genres }}</pre> -->
+  <!-- <pre>{{ trendMovie?.results[0] }}</pre> -->
+
+  <pre>{{ genreStore.genres }}</pre>
 
   <div>
     <Button
@@ -72,7 +81,7 @@ const { data: trendMovie, refresh } = await useAsyncData(
       </NuxtLink>
     </Button>
 
-    <Button @click="refresh">
+    <Button>
       Refresh
     </Button>
 

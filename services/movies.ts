@@ -19,7 +19,19 @@ export interface IMovie {
 export const getTrendingMovies = async (query?: any): Promise<IGeneralResponse<IMovie[]>> => {
   try {
     const res: IGeneralResponse<IMovie[]> = await useGetFetch('/3/trending/movie/day', {
-      query: query
+      query
+    })
+
+    return res
+  } catch (error: any) {
+    throw new Error(error)
+  }
+}
+
+export const getDiscoverMovies = async (query?: any): Promise<IGeneralResponse<IMovie[]>> => {
+  try {
+    const res: IGeneralResponse<IMovie[]> = await useGetFetch('/3/discover/movie', {
+      query
     })
 
     return res

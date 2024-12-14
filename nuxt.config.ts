@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@pinia/nuxt',
   ],
   colorMode: {
     classSuffix: '',
