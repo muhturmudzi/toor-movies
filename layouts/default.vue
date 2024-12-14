@@ -14,4 +14,6 @@ useSeoMeta({
   <main class="relative">
     <slot />
   </main>
+
+  <LayoutsFooter />
 </template>
