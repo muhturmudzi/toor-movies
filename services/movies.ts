@@ -86,3 +86,18 @@ export const getDetailMovies = async (id: number, query?: any): Promise<IDetailM
     throw new Error(error)
   }
 }
+
+export const getSearchMovie = async (key: string, query?: any): Promise<IGeneralResponse<IMovie[]>> => {
+  try {
+    const res: IGeneralResponse<IMovie[]> = await useGetFetch('/3/search/movie', {
+      query: {
+        query: key,
+        ...query
+      }
+    })
+
+    return res
+  } catch (error: any) {
+    throw new Error(error)
+  }
+}
