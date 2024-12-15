@@ -49,7 +49,7 @@ useSeoMeta({
       format="webp"
       :src="`${imgUrl}/w1280${detail?.backdrop_path}`"
       :alt="detail?.title"
-      class="w-full object-cover opacity-20"
+      class="w-full min-h-screen object-cover opacity-20"
       loading="lazy"
     />
 
