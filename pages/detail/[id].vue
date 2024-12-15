@@ -99,7 +99,7 @@ useSeoMeta({
           format="webp"
           :src="`${imgUrl}/w500${detail?.poster_path}`"
           :alt="detail?.title"
-          class="w-[220px] object-cover drop-shadow-lg"
+          class="w-[220px] min-h-80 object-cover drop-shadow-lg"
           loading="lazy"
         />
         <div class="flex flex-col justify-between">
