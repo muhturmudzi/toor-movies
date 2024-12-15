@@ -33,13 +33,21 @@ const { data: recommendation } = await useAsyncData(
 const genres = computed(() => {
   return detail.value?.genres.map(item => item.name).join(', ')
 })
+
+useSeoMeta({
+  title: () => String(detail.value?.title),
+  ogTitle: () => String(detail.value?.title),
+  description: () => detail.value?.overview,
+  ogDescription: () => detail.value?.overview,
+  ogImage: () => `${imgUrl}/w1280${detail.value?.backdrop_path}`
+})
 </script>
 
 <template>
   <section class="relative">
     <NuxtImg
       format="webp"
-      :src="`${imgUrl}/original${detail?.backdrop_path}`"
+      :src="`${imgUrl}/w1280${detail?.backdrop_path}`"
       :alt="detail?.title"
       class="w-full object-cover opacity-20"
       loading="lazy"
