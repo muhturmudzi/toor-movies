@@ -11,10 +11,12 @@ if (genreMovie.value) {
 <template>
   <header class="topbar">
     <div class="mov-container flex items-center py-4 space-x-8 lg:space-x-12">
-      <img
-        src="/assets/images/icon/moovietime-logo.svg"
-        alt="moovietime"
-      >
+      <NuxtLink href="/">
+        <img
+          src="/assets/images/icon/moovietime-logo.svg"
+          alt="moovietime"
+        >
+      </NuxtLink>
 
       <InputSearch />
 

@@ -35,6 +35,7 @@ const { getGenreNameById } = useGenreMovieStore()
         </p>
         <div class="flex flex-col space-y-3">
           <Button
+            as-child
             variant="red"
             size="sm"
             class="rounded-full w-24"
