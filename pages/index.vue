@@ -9,6 +9,6 @@ const { data: trendMovie } = await useAsyncData(
 
 <template>
   <MovieCarousel :data="trendMovie?.results" />
-  <div class="absolute top-[600px] left-4 w-full h-72 bg-white/5 z-[-1]" />
+  <div class="absolute top-[600px] right-0 w-[97%] h-72 bg-white/5 z-[-1]" />
   <DiscoverMovie />
 </template>

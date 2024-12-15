@@ -1,0 +1,26 @@
+.list-detail {
+  @apply flex items-center space-x-16 uppercase text-white text-xs font-medium;
+
+  & > li {
+    @apply relative py-1;
+
+    &:not(:last-of-type)::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: -32px;
+      width: 1px;
+      height: 100%;
+      background-color: white;
+      opacity: .2;
+    }
+
+    span {
+      @apply text-white/50;
+    }
+
+    p {
+      @apply mt-1;
+    }
+  }
+}

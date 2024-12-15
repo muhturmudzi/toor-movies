@@ -60,7 +60,7 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
           >
             <NuxtImg
               format="webp"
-              :src="`${imgUrl}${item.poster_path}`"
+              :src="`${imgUrl}/w500${item.poster_path}`"
               :alt="item.title"
               class="w-60 object-cover"
               loading="lazy"

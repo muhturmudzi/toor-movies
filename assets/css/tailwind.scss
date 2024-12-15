@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @import
+  'components/list';
+
+@import
   'layouts/container',
   'layouts/layout';
 

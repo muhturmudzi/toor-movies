@@ -2,6 +2,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.list-detail {
+  @apply flex items-center space-x-16 uppercase text-white text-xs font-medium;
+}
+.list-detail > li {
+  @apply relative py-1;
+}
+.list-detail > li:not(:last-of-type)::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -32px;
+  width: 1px;
+  height: 100%;
+  background-color: white;
+  opacity: 0.2;
+}
+.list-detail > li span {
+  @apply text-white/50;
+}
+.list-detail > li p {
+  @apply mt-1;
+}
+
 .mov-container {
   @apply w-full px-5 mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl;
 }

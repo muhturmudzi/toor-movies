@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { IReview } from '~/services/review'
+import { formatDate } from '~/lib/utils'
 
 interface IProps {
   data: IReview
@@ -28,7 +29,7 @@ const description = computed(() => {
         <NuxtImg
           v-if="data.author_details.avatar_path"
           format="webp"
-          :src="`${imgUrl}${data.author_details.avatar_path}`"
+          :src="`${imgUrl}/w500${data.author_details.avatar_path}`"
           :alt="data.author"
           class="w-12 h-12 rounded-full object-cover"
           loading="lazy"
@@ -42,7 +43,7 @@ const description = computed(() => {
             {{ data.author }}
           </p>
           <span class="text-xs text-[#666666]">
-            {{ data.created_at }}
+            {{ formatDate(data.created_at) }}
           </span>
         </div>
       </div>
