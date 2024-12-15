@@ -15,7 +15,9 @@ const { getGenreNameById } = useGenreMovieStore()
   <div>
     <div class="relative group">
       <NuxtImg
+        format="webp"
         :src="`${imgUrl}${data.poster_path}`"
+        :alt="data.title"
         class="w-full object-cover"
         loading="lazy"
       />

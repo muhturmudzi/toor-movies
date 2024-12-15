@@ -18,10 +18,12 @@ const onSearch = () => {
     <img
       class="absolute top-1/2 -translate-y-1/2 left-3"
       src="/assets/images/icon/movie-icon.svg"
+      alt="movie"
     >
     <img
       class="absolute top-1/2 -translate-y-1/2 right-3"
       src="/assets/images/icon/search-icon.svg"
+      alt="search"
     >
   </form>
 </template>

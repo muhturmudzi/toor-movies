@@ -48,7 +48,7 @@ watch(
         :default-value="sortValue"
         @update:model-value="emit('onSortChange', $event)"
       >
-        <SelectTrigger>
+        <SelectTrigger aria-label="sort">
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent>

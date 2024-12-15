@@ -59,7 +59,9 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
             :class="{'opacity-30': selectedIndex !== index}"
           >
             <NuxtImg
+              format="webp"
               :src="`${imgUrl}${item.poster_path}`"
+              :alt="item.title"
               class="w-60 object-cover"
               loading="lazy"
             />
@@ -105,6 +107,7 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
           @click="onThumbClick(index)"
         >
           <button
+            aria-label="thumbnail"
             :class="`h-3 rounded-full transition-all ${index === selectedIndex ? 'w-16 bg-destructive' : 'w-3 bg-white/50'}`"
           />
         </CarouselItem>
